@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Beto Filmari | Dentista em Goiânia</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --whatsapp: #25d366;
+            --whatsapp-hover: #20ba5a;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+            background: #e0f2fe;
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--whatsapp);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 16px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .btn-whatsapp i {
+            font-size: 1.3rem;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+
+        .hero-section {
+            padding: 50px 0 70px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            background: #e2e8f0;
+            aspect-ratio: 4/5;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .hero-badge i {
+            color: var(--primary);
+            margin-right: 6px;
+        }
+
+        .hero-title {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .hero-cta-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .hero-microtext {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-microtext i {
+            color: #eab308;
+        }
+
+        .about-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image-box {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            background: #e2e8f0;
+            aspect-ratio: 4/5;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .about-text-box h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .about-desc {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .about-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .about-bullets li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .about-bullets i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .results-section {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background-color: #e2e8f0;
+            aspect-ratio: 1/1;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #cbd5e1;
+            background: #ffffff;
+            color: #94a3b8;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .gallery-placeholder i {
+            font-size: 1.5rem;
+        }
+
+        .disclaimer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 15px;
+        }
+
+        .features-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 30px 24px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.08);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: #e0f2fe;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .cta-banner-section {
+            padding: 40px 0;
+            background-color: var(--bg-light);
+        }
+
+        .cta-banner-box {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 50px 30px;
+            border-radius: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
+        }
+
+        .cta-banner-box h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            max-width: 700px;
+        }
+
+        .cta-banner-box p {
+            color: #94a3b8;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin-bottom: 10px;
+        }
+
+        .steps-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .step-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 35px 25px;
+            border-radius: var(--radius);
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #cbd5e1;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        .step-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .behind-scenes-section {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .bs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .bs-item {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+            cursor: pointer;
+            aspect-ratio: 16/10;
+            background: #e2e8f0;
+        }
+
+        .bs-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+        }
+
+        .bs-item:hover img {
+            transform: scale(1.04);
+        }
+
+        .bs-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px 20px 12px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .final-cta-section {
+            padding: 90px 0;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .final-cta-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .final-cta-content h2 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .final-cta-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+
+        .footer-section {
+            background-color: var(--text-dark);
+            color: #ffffff;
+            padding: 50px 0 30px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 25px;
+        }
+
+        .footer-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .footer-info p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-social a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.08);
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+        }
+
+        .footer-copy {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+            padding-top: 20px;
+            margin-top: 10px;
+        }
+
+        .footer-copy p {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox-modal img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .hero-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            /* Regra rígida mobile: Imagem em primeiro lugar, menor e centralizada, seguida pelo H1 */
+            .hero-image-wrapper {
+                order: 1;
+                width: 180px;
+                max-width: 180px;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                margin: 0 auto;
+                box-shadow: 0 10px 25px rgba(2, 132, 199, 0.15);
+                border: 3px solid #ffffff;
+            }
+
+            .hero-img {
+                object-position: center top;
+            }
+
+            .hero-badge {
+                display: none; /* Oculta badge flutuante para manter limpo no formato circular reduzido */
+            }
+
+            .hero-content {
+                order: 2;
+            }
+
+            .hero-title {
+                font-size: 1.85rem;
+                margin-top: 5px;
+                margin-bottom: 15px;
+                line-height: 1.2;
+            }
+
+            .hero-subtitle {
+                font-size: 0.98rem;
+                margin-bottom: 20px;
+            }
+
+            .hero-cta-wrapper {
+                align-items: center;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .about-image-box {
+                max-width: 280px;
+            }
+
+            .about-bullets {
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .section-header h2, .cta-banner-box h2, .final-cta-content h2 {
+                font-size: 1.7rem;
+            }
+
+            .btn-whatsapp {
+                width: 100%;
+                max-width: 100%;
+                padding: 14px 20px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="container hero-container">
+            <!-- No mobile: Aparece em primeiro lugar, menor e em formato circular otimizado -->
+            <div class="hero-image-wrapper">
+                <img src="https://i.imgur.com/CHYToAs.jpeg" alt="Dr. Beto Filmari" class="hero-img">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-shield-check"><span>Atendimento Exclusivo</span></i>
+                </div>
+            </div>
+            
+            <div class="hero-content">
+                <h1 class="hero-title">Eu sou Dr. Beto Filmari, Dentista em Goiânia</h1>
+                <p class="hero-subtitle">Transformando sorrisos com tecnologia avançada, conforto absoluto e resultados naturais que elevam a sua autoestima e segurança.</p>
+                
+                <div class="hero-cta-wrapper">
+                    <a href="https://api.whatsapp.com/send/?phone=5562999589180&text=Ol%C3%A1%2C+vim+pelo+link+na+Bio+do+Instagram+e+quero+marcar+minha+avalia%C3%A7%C3%A3o.&type=phone_number&app_absent=0" class="btn-whatsapp pulse" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp"></i> Agendar minha avaliação no WhatsApp
+                    </a>
+                    <span class="hero-microtext">
+                        <i class="fa-solid fa-bolt"></i> Resposta rápida • Atendimento humanizado
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container about-container">
+            <div class="about-image-box">
+                <img src="https://i.imgur.com/Sekat4M.jpeg" alt="Dr. Beto Filmari no consultório" class="about-img">
+            </div>
+            <div class="about-text-box">
+                <span class="section-tag">Autoridade & Paixão</span>
+                <h2>Quem sou eu</h2>
+                <p class="about-desc">Acredito que ir ao dentista deve ser uma experiência tranquila, transparente e transformadora. Meu compromisso é ouvir você com atenção, entender suas expectativas e entregar um tratamento de excelência, sem dor e focado no seu bem-estar.</p>
+                
+                <ul class="about-bullets">
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Atendimento 100% humanizado e individualizado</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Foco total em conforto e ausência de dor</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Tecnologia de ponta para diagnósticos precisos</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="results-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Transformações</span>
+                <h2>Resultados Reais</h2>
+                <p>Confira alguns dos casos tratados em nosso consultório em Goiânia.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox('https://i.imgur.com/FVlZ8Eg.jpeg')">
+                    <img src="https://i.imgur.com/FVlZ8Eg.jpeg" alt="Resultado Antes e Depois 1" loading="lazy">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://i.imgur.com/937F1wj.jpeg')">
+                    <img src="https://i.imgur.com/937F1wj.jpeg" alt="Resultado Antes e Depois 2" loading="lazy">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://i.imgur.com/D9VOLF2.jpeg')">
+                    <img src="https://i.imgur.com/D9VOLF2.jpeg" alt="Resultado Antes e Depois 3" loading="lazy">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://i.imgur.com/zziMFKK.jpeg')">
+                    <img src="https://i.imgur.com/zziMFKK.jpeg" alt="Resultado Antes e Depois 4" loading="lazy">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://i.imgur.com/tK7PcHa.jpeg')">
+                    <img src="https://i.imgur.com/tK7PcHa.jpeg" alt="Resultado Antes e Depois 5" loading="lazy">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://i.imgur.com/1nDCf0e.jpeg')">
+                    <img src="https://i.imgur.com/1nDCf0e.jpeg" alt="Resultado Antes e Depois 6" loading="lazy">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://i.imgur.com/F9F7g5B.jpeg')">
+                    <img src="https://i.imgur.com/F9F7g5B.jpeg" alt="Resultado Antes e Depois 7" loading="lazy">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <!-- Espaço pronto para novos links -->
+                <div class="gallery-item gallery-placeholder">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Novos Casos Em Breve</span>
+                </div>
+            </div>
+
+            <p class="disclaimer">* Resultados podem variar de pessoa para pessoa.</p>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Diferenciais</span>
+                <h2>Por que confiar em mim?</h2>
+                <p>Pilares que sustentam a excelência do nosso atendimento diário.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3>Avaliação Honesta</h3>
+                    <p>Diagnóstico claro e objetivo, indicando apenas o que é realmente necessário para a sua saúde bucal.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                    <h3>Atendimento Comigo</h3>
+                    <p>Você é atendido diretamente pelo Dr. Beto Filmari em todas as etapas, garantindo consistência e segurança.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-comments"></i></div>
+                    <h3>Clareza e Diálogo</h3>
+                    <p>Explico cada passo do procedimento de forma simples para que você decida com total tranquilidade.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <h3>Pontualidade</h3>
+                    <p>Respeito absoluto ao seu tempo com horários agendados sem longas esperas na recepção.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner-section">
+        <div class="container">
+            <div class="cta-banner-box">
+                <h2>Pronto para transformar o seu sorriso com segurança?</h2>
+                <p>Tire suas dúvidas diretamente com nossa equipe e agende sua avaliação no Setor Pedro Ludovico.</p>
+                <a href="https://api.whatsapp.com/send/?phone=5562999589180&text=Ol%C3%A1%2C+vim+pelo+link+na+Bio+do+Instagram+e+quero+marcar+minha+avalia%C3%A7%C3%A3o.&type=phone_number&app_absent=0" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp"></i> Falar com Dr. Beto no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="steps-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Simples e Rápido</span>
+                <h2>Como funciona o atendimento</h2>
+                <p>Três passos simples para iniciar o seu tratamento.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>WhatsApp</h3>
+                    <p>Clique em qualquer botão do site para iniciar a conversa rápida em nosso canal oficial.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Agendamento</h3>
+                    <p>Nossa equipe encontra o melhor horário para a sua comodidade no St. Pedro Ludovico.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Avaliação</h3>
+                    <p>Você passa por uma avaliação detalhada com o Dr. Beto Filmari e alinha seu plano de tratamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="behind-scenes-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Bastidores</span>
+                <h2>Nosso Consultório & Cuidado</h2>
+                <p>Estrutura moderna e preparada para o seu conforto.</p>
+            </div>
+
+            <div class="bs-grid">
+                <div class="bs-item" onclick="openLightbox('https://i.imgur.com/uXjI2iq.jpeg')">
+                    <img src="https://i.imgur.com/uXjI2iq.jpeg" alt="Bastidores 1" loading="lazy">
+                    <div class="bs-caption"><span>Atendimento personalizado</span></div>
+                </div>
+                <div class="bs-item" onclick="openLightbox('https://i.imgur.com/aA7iBKI.png')">
+                    <img src="https://i.imgur.com/aA7iBKI.png" alt="Bastidores 2" loading="lazy">
+                    <div class="bs-caption"><span>Estrutura moderna</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta-section">
+        <div class="container text-center">
+            <div class="final-cta-content">
+                <h2>Seu novo sorriso começa aqui</h2>
+                <p>Não adie o cuidado com a sua saúde e confiança. Agende sua avaliação hoje mesmo pelo WhatsApp.</p>
+                <a href="https://api.whatsapp.com/send/?phone=5562999589180&text=Ol%C3%A1%2C+vim+pelo+link+na+Bio+do+Instagram+e+quero+marcar+minha+avalia%C3%A7%C3%A3o.&type=phone_number&app_absent=0" class="btn-whatsapp pulse" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp"></i> Agendar minha avaliação agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>Dr. Beto Filmari</h3>
+                <p>Dentista • CRO-GO</p>
+                <p><i class="fa-solid fa-location-dot"></i> R. 1030, 85 - quadra 71 lote 06 - St. Pedro Ludovico, Goiânia - GO, 74823-150</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=5562999589180&text=Ol%C3%A1%2C+vim+pelo+link+na+Bio+do+Instagram+e+quero+marcar+minha+avalia%C3%A7%C3%A3o.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+            <div class="footer-copy">
+                <p>© Dr. Beto Filmari. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightboxImg" src="" alt="Ampliada">
+    </div>
+
+    <script>
+        /**
+         * Lightbox functionality for image zoom
+         */
+        function openLightbox(imgSrc) {
+            const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('lightboxImg');
+            
+            modal.style.display = 'flex';
+            modalImg.src = imgSrc;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
